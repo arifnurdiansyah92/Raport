@@ -2,7 +2,7 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
     class Raport extends CI_Controller{
         public function index(){
-            $this->load->view("menu.php");
+            redirect('raport/data/data_siswa');
         }
         public function data($table){
         
@@ -40,6 +40,15 @@
             $this->load->view("header",$data);
             $this->load->view("edit_data",$data); 
             $this->load->view("footer");
+        }
+        
+        function cetakpdf() {
+
+            $this->fpdf->AddPage('P','A4');
+            $this->fpdf->Ln();
+            $this->fpdf->setFont('Arial','B',9);
+            $this->fpdf->Text(6,1,'Hello World ...');
+            $this->fpdf->Output();  
         }
     }
 
