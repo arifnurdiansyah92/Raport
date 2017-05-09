@@ -87,17 +87,17 @@
             </tr>
             <tr>
                 <td>Mata Pelajaran</td>
+                <td>
+                    <select name="mata_pelajaran">
                 <?php
                 foreach($mapel as $m){
                 ?>
-                <td>
-                    <select name="mata_pelajaran">
                         <option value="<?php echo $m->id_mapel ?>"><?php echo $m->mata_pelajaran ?></option>
-                    </select>
-                </td>
                 <?php
                 }
                 ?>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>Jenis Nilai</td>

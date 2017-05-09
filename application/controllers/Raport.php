@@ -41,14 +41,14 @@
             $this->load->view("edit_data",$data); 
             $this->load->view("footer");
         }
-        
-        function cetakpdf() {
 
-            $this->fpdf->AddPage('P','A4');
-            $this->fpdf->Ln();
-            $this->fpdf->setFont('Arial','B',9);
-            $this->fpdf->Text(6,1,'Hello World ...');
-            $this->fpdf->Output();  
+        function cetakpdf($id_nilai) {
+            $where=array(
+                'data_nilai.id_nilai'=>$id_nilai
+            );
+            $data['siswa']=$this->m_crud->get('data_nilai',$where)->result();
+            $data['data']=$this->m_crud->get("data_siswa")->result();
+            $this->load->view('laporanpdf',$data);
         }
     }
 

@@ -92,7 +92,7 @@
             <td><?php echo $s->nilai ?></td>
             <td><a href="<?php echo base_url()."Raport/edit/data_nilai/id_nilai/".$s->id_nilai ?>">Edit</a></td>
             <td><a href="<?php echo base_url()."CRUD/hapus/data_nilai/id_nilai/".$s->id_nilai ?>">Hapus</a></td>
-            <td><a href="#">PDF</a></td>
+            <td><a href="<?php echo base_url()."Raport/cetakpdf/".$s->id_nilai ?>">PDF</a></td>
         </tr>
         <?php
             }      
