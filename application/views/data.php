@@ -1,5 +1,5 @@
 <body>
-    <table class="table table-bordered">
+    <table class="table table-hover bg-warning">
     <?php
         if($table=="data_kelas"){
             $kolom=5;
@@ -99,6 +99,6 @@
         }
     ?>
         <tr>
-            <td colspan="<?php echo $kolom ?>" align="right"><a href="<?php echo base_url().'/raport/create/'.$table ?>"><button>Tambah Data</button></a></td>
+            <td colspan="<?php echo $kolom ?>" align="right"><a href="<?php echo base_url().'/raport/create/'.$table ?>"><button class="btn btn-default">Tambah Data</button></a></td>
         </tr>
     </table>
