@@ -2,12 +2,13 @@
     <table class="table table-hover bg-warning">
     <?php
         if($table=="data_kelas"){
-            $kolom=5;
+            $kolom=6;
     ?>
         <thead>
             <th>ID_Kelas</th>
             <th>GRADE</th>
             <th>Nama Kelas</th>
+            <th>Kuota</th>
             <th colspan=2>Aksi</th>
         </thead>
         <?php 
@@ -17,6 +18,7 @@
             <td><?php echo $k->id_kelas ?></td>
             <td><?php echo $k->grade ?></td>
             <td><?php echo $k->nama_kelas ?></td>
+            <td><?php echo $k->kuota ?></td>
             <td><a href="<?php echo base_url()."Raport/edit/data_kelas/id_kelas/".$k->id_kelas ?>">Edit</a></td>
             <td><a href="<?php echo base_url()."CRUD/hapus/data_kelas/id_kelas/".$k->id_kelas ?>">Hapus</a></td>
         </tr>

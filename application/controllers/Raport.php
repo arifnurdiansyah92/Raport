@@ -5,7 +5,6 @@
             redirect('raport/data/data_siswa');
         }
         public function data($table){
-        
             $data['title']="Data";
             $data['table']=$table;
             $data['resource']=$this->m_crud->get($table)->result();
@@ -13,7 +12,6 @@
             $this->load->view("data",$data);
             $this->load->view("footer");
         }
-        //Fungsi CRUD TAMPILAN
         public function create($table){
             $data['title']="Tambah Data";
             $data['table']=$table;

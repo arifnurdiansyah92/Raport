@@ -47,7 +47,8 @@
             if($table=="data_kelas"){
                 $data=array(
                     'grade'=>$this->input->post('grade'),
-                    'nama_kelas'=>$this->input->post('nama_kelas')
+                    'nama_kelas'=>$this->input->post('nama_kelas'),
+                    'kuota'=>$this->input->post('kuota')
                 );
             }
             else if($table=="data_siswa"){

@@ -21,6 +21,11 @@
                 <td>Nama Kelas</td>
                 <td><input type="text" name="nama_kelas" required value="<?php echo $k->nama_kelas ?>"></td>
             </tr>
+            <tr>
+                <td>Kuota</td>
+                <td><input type="text" name="kuota" required value="<?php echo $k->kuota ?>"></td>
+            </tr>
+            
         <?php
                 }
             }else if($table=="data_siswa"){

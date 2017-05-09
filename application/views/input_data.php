@@ -12,6 +12,10 @@
                 <td>Nama Kelas</td>
                 <td><input type="text" name="nama_kelas" required></td>
             </tr>
+            <tr>
+                <td>Kuota</td>
+                <td><input type="text" name="kuota" placeholder="Kosongkan = 35"></td>
+            </tr>
         <?php
             }else if($table=="data_siswa"){
         ?>
