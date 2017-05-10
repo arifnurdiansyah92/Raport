@@ -67,7 +67,7 @@
             <tr>
                 <td>Kelas</td>
                 <td>
-                    <select name="kelas">
+                    <select name="kelas" class="autocomplete">
                 <?php
                 }   
                 foreach($kelas as $k){

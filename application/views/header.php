@@ -4,9 +4,11 @@
         <title><?php echo $title ?></title>
         <link href="<?php echo base_url()."assets/css/bootstrap.min.css" ?>" rel="stylesheet">
         <link href="<?php echo base_url()."assets/css/style.css" ?>" rel="stylesheet">
+        <link href="<?php echo base_url()."assets/css/select2.min.css" ?>" rel="stylesheet">
         <link href="<?php echo base_url()."assets/css/font-awesome.min.css" ?>" rel="stylesheet">
-        <script src="<?php echo base_url()."assets/js/bootstrap.min.js" ?>"></script>
         <script src="<?php echo base_url()."assets/js/jquery-3.1.1.min.js" ?>"></script>
+        <script src="<?php echo base_url()."assets/js/bootstrap.min.js" ?>"></script>
+        <script src="<?php echo base_url()."assets/js/select2.min.js" ?>"></script>
     </head>
     <body>
         <header>

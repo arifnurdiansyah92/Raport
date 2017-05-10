@@ -61,7 +61,7 @@
             <tr>
                 <td>Kelas</td>
                 <td>
-                    <select name="kelas">
+                    <select name="kelas" class="autocomplete">
                 <?php
                 foreach($kelas as $k){
                     $where=array(
@@ -96,7 +96,7 @@
             <tr>
                 <td>Nama Siswa</td>
                 <td>
-                    <select name="nis">
+                    <select name="nis" class="autocomplete">
                 <?php
                 
                 foreach($siswa as $s){
@@ -112,7 +112,7 @@
             <tr>
                 <td>Mata Pelajaran</td>
                 <td>
-                    <select name="mata_pelajaran">
+                    <select name="mata_pelajaran" class="autocomplete">
                 <?php
                 foreach($mapel as $m){
                 ?>
