@@ -16,6 +16,16 @@
                 <td>Kuota</td>
                 <td><input type="text" name="kuota" placeholder="Kosongkan = 35"></td>
             </tr>
+            <tr>
+                <td>Tahun Masuk</td>
+                <td><input type="year" name="tahun_masuk" placeholder="Tahun Masuk"></td>
+            </tr>
+            <tr>
+                <td>Tahun Keluar</td>
+                <td><input type="text" name="tahun_keluar" placeholder="Tahun Keluar"></td>
+            </tr>
+            
+            
         <?php
             }else if($table=="data_siswa"){
         ?>
@@ -46,21 +56,21 @@
             </tr>
             <tr>
                 <td>Alamat</td>
-                <td><input type="textarea" name="alamat"></td>
+                <td><textarea name="alamat"></textarea></td>
             </tr>
             <tr>
                 <td>Kelas</td>
+                <td>
+                    <select name="kelas">
                 <?php
                 foreach($kelas as $k){
                 ?>
-                <td>
-                    <select name="kelas">
                         <option value="<?php echo $k->id_kelas ?>"><?php echo $k->grade."-".$k->nama_kelas ?></option>
-                    </select>
-                </td>
                 <?php
                 }
                 ?>
+                    </select>
+                </td>
             </tr>
         <?php
             }else if($table=='mata_pelajaran'){

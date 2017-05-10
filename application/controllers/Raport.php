@@ -4,6 +4,23 @@
         public function index(){
             redirect('raport/data/data_siswa');
         }
+        public function cetakpdf($id_nilai)
+        {
+        $where=array(
+            'data_nilai.id_nilai'=>$id_nilai
+        );
+        $data['resource']=$this->m_crud->get('data_nilai',$where)->result();
+ 
+        $this->load->helper(array('dompdf', 'file'));
+             
+        $filename='NILAI SISWA';
+        $paper='A4';
+        $orientation='landscape';
+        $html = $this->load->view('tablereport', $data, true);
+        pdf_create($html,$filename,$paper,$orientation);
+        
+	    
+        }
         public function data($table){
             $data['title']="Data";
             $data['table']=$table;
@@ -38,15 +55,6 @@
             $this->load->view("header",$data);
             $this->load->view("edit_data",$data); 
             $this->load->view("footer");
-        }
-
-        function cetakpdf($id_nilai) {
-            $where=array(
-                'data_nilai.id_nilai'=>$id_nilai
-            );
-            $data['siswa']=$this->m_crud->get('data_nilai',$where)->result();
-            $data['data']=$this->m_crud->get("data_siswa")->result();
-            $this->load->view('laporanpdf',$data);
         }
     }
 

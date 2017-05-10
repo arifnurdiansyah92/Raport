@@ -30,6 +30,14 @@
                 }
             }else if($table=="data_siswa"){
                 foreach($resource as $s){
+                    if($s->jenis_kelamin=="Laki-Laki"){
+                        $ket_l="selected";
+                        $ket_b="";
+                    }
+                    else{
+                        $ket_b="selected";
+                        $ket_l="";
+                    }
         ?>
             <input type="hidden" value="<?php echo $s->nis ?>">
             <tr>
@@ -40,8 +48,8 @@
                 <td>Jenis Kelamin</td>
                 <td>
                     <select name="jenis_kelamin">
-                        <option value="Laki-Laki">Laki-Laki</option>
-                        <option value="Perempuan">Perempuan</option>
+                        <option value="Laki-Laki" <?php echo $ket_l ?>>Laki-Laki</option>
+                        <option value="Perempuan" <?php echo $ket_b ?>>Perempuan</option>
                     </select>
                 </td>
             </tr>
@@ -59,18 +67,18 @@
             </tr>
             <tr>
                 <td>Kelas</td>
+                <td>
+                    <select name="kelas">
                 <?php
                 }   
                 foreach($kelas as $k){
                 ?>
-                <td>
-                    <select name="kelas">
                         <option value="<?php echo $k->id_kelas ?>"><?php echo $k->grade."-".$k->nama_kelas ?></option>
-                    </select>
-                </td>
         <?php
                     }
         ?>
+                    </select>
+                </td>
             </tr>
         <?php
             }else if($table=="mata_pelajaran"){

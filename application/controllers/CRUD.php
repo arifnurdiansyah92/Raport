@@ -5,7 +5,9 @@
                 $data=array(
                     'id_kelas'=>'',
                     'grade'=>$this->input->post('grade'),
-                    'nama_kelas'=>$this->input->post('nama_kelas')
+                    'nama_kelas'=>$this->input->post('nama_kelas'),
+                    'kuota'=>$this->input->post('kuota'),
+                    'tahun_ajar'=>$this->input->post('tahun_ajar')
                 );
                 
             } 
@@ -48,7 +50,9 @@
                 $data=array(
                     'grade'=>$this->input->post('grade'),
                     'nama_kelas'=>$this->input->post('nama_kelas'),
-                    'kuota'=>$this->input->post('kuota')
+                    'kuota'=>$this->input->post('kuota'),
+                    'tahun_masuk'=>$this->input->post('tahun_masuk'),
+                    'tahun_keluar'=>$this->input->post('tahun_keluar')
                 );
             }
             else if($table=="data_siswa"){
