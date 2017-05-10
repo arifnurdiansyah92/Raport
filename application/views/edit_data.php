@@ -104,7 +104,7 @@
                 <td>Mata Pelajaran</td>
             
                 <td>
-                    <select name="mata_pelajaran">
+                    <select name="mata_pelajaran" class="autocomplete">
                  <?php   
                 foreach($mapel as $m){
                 ?>
