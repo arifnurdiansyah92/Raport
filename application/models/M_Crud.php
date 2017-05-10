@@ -1,6 +1,6 @@
 <?php
     class M_Crud extends CI_Model{
-        public function get($table,$where=""){
+        public function get($table,$where=''){
             if($table=="data_siswa"){
                 $this->db->select('*');
                 $this->db->from('data_siswa');
@@ -24,7 +24,12 @@
                 $query = $this->db->get();
                 return $query;
             }else{
-            return $this->db->get($table,$where);
+                if($where!=""){
+                return $this->db->get_where($table,$where);
+                }
+                else{
+                    return $this->db->get($table);
+                }
             }
         }
         public function create($table,$data){

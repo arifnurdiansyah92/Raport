@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2017 at 09:42 AM
+-- Generation Time: May 10, 2017 at 08:41 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.15
 
@@ -30,16 +30,10 @@ CREATE TABLE `data_kelas` (
   `id_kelas` int(11) NOT NULL,
   `grade` varchar(5) NOT NULL,
   `nama_kelas` varchar(50) NOT NULL,
-  `kuota` int(11) NOT NULL DEFAULT '35'
+  `kuota` int(11) NOT NULL DEFAULT '35',
+  `tahun_masuk` year(4) NOT NULL DEFAULT '2017',
+  `tahun_keluar` year(4) NOT NULL DEFAULT '2018'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `data_kelas`
---
-
-INSERT INTO `data_kelas` (`id_kelas`, `grade`, `nama_kelas`, `kuota`) VALUES
-(2, 'XI', 'Rekayasa Perangkat Lunak', 36),
-(3, 'X', 'Otomotif', 35);
 
 -- --------------------------------------------------------
 
@@ -54,14 +48,6 @@ CREATE TABLE `data_nilai` (
   `jenis_nilai` varchar(25) NOT NULL,
   `nilai` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `data_nilai`
---
-
-INSERT INTO `data_nilai` (`id_nilai`, `nis`, `mata_pelajaran`, `jenis_nilai`, `nilai`) VALUES
-(5, '151610383', 2, 'Ujikom', 88),
-(6, '151610383', 1, 'UAS', 100);
 
 -- --------------------------------------------------------
 
@@ -79,13 +65,6 @@ CREATE TABLE `data_siswa` (
   `kelas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `data_siswa`
---
-
-INSERT INTO `data_siswa` (`nis`, `nama_siswa`, `jenis_kelamin`, `tgl_lahir`, `tempat_lahir`, `alamat`, `kelas`) VALUES
-('151610383', 'Arif Nurdiansyah', 'Laki-Laki', '2000-10-01', 'Bandung', 'Jl. Burujul RT/RW 02/17 No 17', 2);
-
 -- --------------------------------------------------------
 
 --
@@ -96,14 +75,6 @@ CREATE TABLE `mata_pelajaran` (
   `id_mapel` int(11) NOT NULL,
   `mata_pelajaran` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `mata_pelajaran`
---
-
-INSERT INTO `mata_pelajaran` (`id_mapel`, `mata_pelajaran`) VALUES
-(1, 'Javascript'),
-(2, 'Pemweb');
 
 --
 -- Indexes for dumped tables
@@ -151,12 +122,12 @@ ALTER TABLE `data_kelas`
 -- AUTO_INCREMENT for table `data_nilai`
 --
 ALTER TABLE `data_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Constraints for dumped tables
 --

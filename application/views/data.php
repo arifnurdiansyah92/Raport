@@ -25,7 +25,7 @@
         <?php
             }
         }else if($table=="data_siswa"){
-            $kolom=8;
+            $kolom=9;
     ?>
         <thead>
             <th>NIS</th>
@@ -34,7 +34,7 @@
             <th>Jenis Kelamin</th>
             <th>Tempat, Tgl Lahir</th>
             <th>Alamat</th>
-            <th colspan="2">Aksi</th>
+            <th colspan="3">Aksi</th>
         </thead>
      <?php 
             foreach($resource as $s){
@@ -48,6 +48,7 @@
             <td><?php echo $s->alamat ?></td>
             <td><a href="<?php echo base_url()."Raport/edit/data_siswa/nis/".$s->nis ?>">Edit</a></td>
             <td><a href="<?php echo base_url()."CRUD/hapus/data_siswa/nis/".$s->nis ?>">Hapus</a></td>
+            <td><a href="<?php echo base_url()."Raport/pdf/data_nilai/nis/".$s->nis ?>">PDF</a></td>
         </tr>
         <?php
             }

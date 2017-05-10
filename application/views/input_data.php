@@ -64,9 +64,19 @@
                     <select name="kelas">
                 <?php
                 foreach($kelas as $k){
+                    $where=array(
+                        'kelas'=>$k->id_kelas
+                    );
+                    $jumlah_siswa=$this->m_crud->get('data_siswa',$where)->num_rows();
+                    if($k->kuota==$jumlah_siswa){
                 ?>
-                        <option value="<?php echo $k->id_kelas ?>"><?php echo $k->grade."-".$k->nama_kelas ?></option>
+                        <option value="<?php echo $k->id_kelas ?>" disabled><?php echo $k->grade."-".$k->nama_kelas.'(Penuh)' ?></option>
                 <?php
+                    }else{       
+                ?>
+                        <option value="<?php echo $k->id_kelas ?>"><?php echo $k->grade."-".$k->nama_kelas ?></option>      
+                <?php
+                    }
                 }
                 ?>
                     </select>
@@ -115,11 +125,11 @@
             </tr>
             <tr>
                 <td>Jenis Nilai</td>
-                <td><input type="text" name="jenis_nilai"></td>
+                <td><input type="text" name="jenis_nilai" required></td>
             </tr>
             <tr>
                 <td>Nilai</td>
-                <td><input type="number" name="nilai"></td>
+                <td><input type="number" name="nilai" min="0" max="100"></td>
             </tr>
         <?php
             }

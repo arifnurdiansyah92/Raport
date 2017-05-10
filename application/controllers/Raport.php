@@ -10,9 +10,6 @@
             'data_nilai.id_nilai'=>$id_nilai
         );
         $data['resource']=$this->m_crud->get('data_nilai',$where)->result();
- 
-        $this->load->helper(array('dompdf', 'file'));
-             
         $filename='NILAI SISWA';
         $paper='A4';
         $orientation='landscape';
@@ -20,6 +17,27 @@
         pdf_create($html,$filename,$paper,$orientation);
         
 	    
+        }
+        public function pdf($table){
+            $kolom=$this->uri->segment(4);
+            $id=$this->uri->segment(5);
+            $where=array(
+                    'data_siswa.'.$kolom=>$id
+            );
+            $data['siswa']=$this->m_crud->get($table,$where)->result();
+            foreach($data['siswa'] as $res){
+                $data['nama'] = $res->nama_siswa;
+                $data['nis'] = $res->nis;
+                $data['kelas'] = $res->grade.'-'.$res->nama_kelas;
+            }
+            $data['title']='Raport Siswa '.$data['nama'];
+            $filename='NILAI SISWA';
+            $paper='A4';
+            $orientation='potrait';
+            $html = $this->load->view('raport_siswa', $data, true);
+            pdf_create($html,$filename,$paper,$orientation);
+
+
         }
         public function data($table){
             $data['title']="Data";
@@ -42,8 +60,8 @@
         public function edit($table){
             $data['kolom']=$this->uri->segment(4);
             $data['id']=$this->uri->segment(5);
-            $data['kelas']=$this->m_crud->get('data_kelas')->result();
-            $data['mapel']=$this->m_crud->get('mata_pelajaran')->result();      
+            $data['kelas']=$this->m_crud->get('data_kelas','')->result();
+            $data['mapel']=$this->m_crud->get('mata_pelajaran','')->result();      
             $data['title']="Edit Data";
             $data['table']=$table;
             $kolom=$this->uri->segment(4);

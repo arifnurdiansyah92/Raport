@@ -12,7 +12,6 @@
                 
                 foreach($resource as $k){
         ?>  
-            <input type="hidden" value="<?php echo $k->id_kelas ?>">
             <tr>
                 <td>Grade</td>
                 <td><input type="text" name="grade" required value="<?php echo $k->grade ?>"></td>
