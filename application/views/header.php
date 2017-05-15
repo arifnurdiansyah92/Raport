@@ -22,16 +22,16 @@
                 <ul class="navbar-nav">
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url()."raport/data/data_siswa" ?>">Data Siswa</a>
+                        <a class="nav-link" href="<?php echo base_url()."data_siswa/data" ?>">Data Siswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url()."raport/data/data_kelas" ?>">Data Kelas</a>
+                        <a class="nav-link" href="<?php echo base_url()."data_kelas/data/" ?>">Data Kelas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url()."raport/data/mata_pelajaran" ?>">Data Mata Pelajaran</a>
+                        <a class="nav-link" href="<?php echo base_url()."mata_pelajaran/data/" ?>">Data Mata Pelajaran</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url()."raport/data/data_nilai" ?>">Data Nilai</a>
+                        <a class="nav-link" href="<?php echo base_url()."data_nilai/data/" ?>">Data Nilai</a>
                     </li>
                     
                 </ul>

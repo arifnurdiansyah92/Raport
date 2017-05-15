@@ -7,7 +7,8 @@
                     'grade'=>$this->input->post('grade'),
                     'nama_kelas'=>$this->input->post('nama_kelas'),
                     'kuota'=>$this->input->post('kuota'),
-                    'tahun_ajar'=>$this->input->post('tahun_ajar')
+                    'tahun_masuk'=>$this->input->post('tahun_masuk'),
+                    'tahun_keluar'=>$this->input->post('tahun_keluar')
                 );
                 
             } 
@@ -35,6 +36,12 @@
                     'mata_pelajaran'=>$this->input->post('mata_pelajaran'),
                     'jenis_nilai'=>$this->input->post('jenis_nilai'),
                     'nilai'=>$this->input->post('nilai')
+                );
+            }else if($table=="pdf"){
+                $data=array(
+                    'id_pdf' =>'',
+                    'type' =>$this->input->post('type'),
+                    'isi' =>$this->input->post('isi')
                 );
             }
             $this->m_crud->create($table,$data);
@@ -76,7 +83,7 @@
                 );
             }
             $this->m_crud->update_data($where,$data,$table);
-            redirect("Raport/data/".$table);
+            redirect($table."/data/");
 
         }
         public function hapus($table){
@@ -86,7 +93,7 @@
                 $kolom=>$id
             );
             $this->m_crud->hapus($table,$where);
-            redirect("Raport/data/".$table);
+            redirect($table."/data/");
         }
     }
 

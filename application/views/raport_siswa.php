@@ -11,7 +11,11 @@
         </style>
     </head>
     <body>
-        <h1 align="center">AN RAPORT</h1>
+        <?php 
+            foreach($resource as $res){
+                echo $res->isi;
+            }
+        ?>
         <p>Nama : <?php echo $nama.'('.$nis.')' ?></p>
         <p>Kelas : <?php echo $kelas ?></p>
         <table>

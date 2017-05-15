@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <td>Kuota</td>
-                <td><input type="text" name="kuota" placeholder="Kosongkan = 35"></td>
+                <td><input type="text" name="kuota" placeholder="Kuota Kelas"></td>
             </tr>
             <tr>
                 <td>Tahun Masuk</td>
@@ -130,6 +130,33 @@
             <tr>
                 <td>Nilai</td>
                 <td><input type="number" name="nilai" min="0" max="100"></td>
+            </tr>
+        <?php
+            }else if($table=="pdf"){
+        ?>
+            <tr>
+                <td>Jenis</td>
+                <td>
+                    <select name="type">
+                        <option value="header">Header</option>
+                        <option value="footer">Footer</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Daftar Header/Footer</td>
+                <td>
+                <select name="kode_pdf">
+                    <option disabled selected>Pilih Header/Footer</option>
+                    <?php
+                    foreach($resource as $res){
+                    ?>
+                    <option value="<?php echo $res->kode_pdf ?>"><?php echo '('.$res->kode_pdf.') '.$res->nama ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                </td>
             </tr>
         <?php
             }
