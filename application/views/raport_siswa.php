@@ -13,12 +13,15 @@
                 position: absolute;
               
             }
+            .head{
+                margin: 0px;
+            }
         </style>
     </head>
     <body>
         <?php 
             foreach($header as $head){
-                echo $head->isi;
+                echo "<div class='head'>".$head->isi."</div>";
             }foreach($siswa as $s){
         ?>
         <p>Nama : <?php echo $s->nama_siswa.'('.$s->nis.')' ?></p>

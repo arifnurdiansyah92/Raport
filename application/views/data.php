@@ -14,7 +14,7 @@
             foreach($resource as $k){
         ?>
         <tr>
-            <td><?php echo $k->grade.'-'.$k->nama_kelas ?></td>
+            <td><a href="<?php echo base_url()."data_siswa/data/".$k->id_kelas ?>"><?php echo $k->grade.'-'.$k->nama_kelas ?></a></td>
             <td><?php echo $k->kuota ?></td>
             <td><?php echo $k->tahun_masuk.'/'.$k->tahun_keluar ?></td>
             <td><a href="<?php echo base_url()."data_kelas/edit/".$k->id_kelas ?>">Edit</a></td>
@@ -68,7 +68,7 @@
         <?php
             }
         }else if($table=="data_nilai"){
-            $kolom=9;
+            $kolom=8;
         ?>
         <thead>
             <th>NIS</th>
@@ -77,7 +77,7 @@
             <th>Mata Pelajaran</th>
             <th>Jenis Nilai</th>
             <th>Nilai</th>
-            <th colspan="3">Aksi</th>
+            <th colspan="2">Aksi</th>
         </thead>
         <?php
             foreach($resource as $s){
@@ -91,7 +91,6 @@
             <td><?php echo $s->nilai ?></td>
             <td><a href="<?php echo base_url()."data_nilai/edit/".$s->id_nilai ?>">Edit</a></td>
             <td><a href="<?php echo base_url()."CRUD/hapus/data_nilai/id_nilai/".$s->id_nilai ?>">Hapus</a></td>
-            <td><a href="<?php echo base_url()."Raport/cetakpdf/".$s->id_nilai ?>">PDF</a></td>
         </tr>
         <?php
             }      

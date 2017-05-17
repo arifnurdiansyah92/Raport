@@ -16,8 +16,13 @@
             if($table==""){
                 redirect("pdf/konfigurasi");
             }
-            $data['kolom']=$this->uri->segment(4);
             $data['id']=$this->uri->segment(5);
+            $data['kolom']=$this->uri->segment(4);
+            $array=array(
+                'data_siswa.'.$data['kolom']=>$data['id']
+            );
+            $get_nilai=$this->m_crud->get("data_nilai",$array)->num_rows();
+            if($get_nilai>0){
             $data['title']='AN RAPORT - PDF Konfigurasi';
             $data['table']='pdf';
             $data['header']=$this->m_crud->get("pdf",array("type"=>"Header"))->result();
@@ -25,6 +30,10 @@
             $this->load->view('header',$data);
             $this->load->view('laporanpdf',$data);
             $this->load->view('footer',$data);
+            }
+            else{
+                redirect("data_siswa/data");
+            }
         }
         public function konfigurasi(){
             $data['table']='pdf';
