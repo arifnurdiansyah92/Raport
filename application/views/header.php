@@ -33,6 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url()."data_nilai/data/" ?>">Data Nilai</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url()."pdf/data/" ?>">Data PDF</a>
+                    </li>
                     
                 </ul>
               </div>

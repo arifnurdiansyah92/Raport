@@ -135,7 +135,11 @@
             }else if($table=="pdf"){
         ?>
             <tr>
-                <td>Jenis</td>
+                <td>Nama</td>
+                <td><input type="text" name="nama"></td>
+            </tr>
+            <tr>
+                <td>Type</td>
                 <td>
                     <select name="type">
                         <option value="header">Header</option>
@@ -144,19 +148,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Daftar Header/Footer</td>
-                <td>
-                <select name="kode_pdf">
-                    <option disabled selected>Pilih Header/Footer</option>
-                    <?php
-                    foreach($resource as $res){
-                    ?>
-                    <option value="<?php echo $res->kode_pdf ?>"><?php echo '('.$res->kode_pdf.') '.$res->nama ?></option>
-                    <?php
-                    }
-                    ?>
-                </select>
-                </td>
+                <td colspan="2"><textarea id="wysiwyg" name="isi"></textarea></td>
             </tr>
         <?php
             }

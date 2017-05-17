@@ -88,6 +88,7 @@ class Excel extends CI_Controller {
                 $insert = $this->db->insert($table,$data);
                      
             }
+        unlink($inputFileName);
         redirect($table.'/data');
     }
     public function import($table){

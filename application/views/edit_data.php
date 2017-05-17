@@ -24,6 +24,15 @@
                 <td>Kuota</td>
                 <td><input type="text" name="kuota" required value="<?php echo $k->kuota ?>"></td>
             </tr>
+            <tr>
+                <td>Tahun Masuk</td>
+                <td><input type="text" name="tahun_masuk" required value="<?php echo $k->tahun_masuk ?>"></td>
+            </tr>
+            <tr>
+                <td>Kuota</td>
+                <td><input type="text" name="tahun_keluar" required value="<?php echo $k->tahun_keluar ?>"></td>
+            </tr>
+            
             
         <?php
                 }
@@ -127,7 +136,20 @@
             
         <?php
                 }
+            }else if($table=="pdf"){
+            foreach($resource as $res){
+        ?>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text" name="nama" value="<?php echo $res->nama ?>"></td>
+            </tr>
+            <tr>
+                <td>Isi</td>
+                <td><textarea id="wysiwyg" name="isi"><?php echo $res->isi ?></textarea></td>
+            </tr>
+        <?php
             }
+                }
         ?>
             <tr>
                 <td colspan="2"><button type="submit">Update</button></td>

@@ -38,14 +38,21 @@
                     'nilai'=>$this->input->post('nilai')
                 );
             }else if($table=="pdf"){
+                if($this->input->post('type')=='header'){
+                    $kode=$this->m_crud->kode($table,"kode_pdf","H");
+                }
+                else{
+                    $kode=$this->m_crud->kode($table,"kode_pdf","F");
+                }
                 $data=array(
-                    'id_pdf' =>'',
+                    'kode_pdf' =>$kode,
+                    'nama'=>$this->input->post('nama'),
                     'type' =>$this->input->post('type'),
                     'isi' =>$this->input->post('isi')
                 );
             }
             $this->m_crud->create($table,$data);
-            redirect("Raport/data/".$table);
+            redirect($table."/data/");
         }
         public function edit($table){
             $kolom=$this->uri->segment(4);
@@ -81,6 +88,11 @@
                     'mata_pelajaran'=>$this->input->post('mata_pelajaran'),
                     'nilai'=>$this->input->post('nilai')
                 );
+            }else if($table=="pdf"){
+                $data=array(
+                    'nama'=>$this->input->post('nama'),
+                    'isi'=>$this->input->post('isi')
+                );
             }
             $this->m_crud->update_data($where,$data,$table);
             redirect($table."/data/");
@@ -95,6 +107,7 @@
             $this->m_crud->hapus($table,$where);
             redirect($table."/data/");
         }
+        
     }
 
 ?>

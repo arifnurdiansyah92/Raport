@@ -2,11 +2,12 @@
     <table class="table table-hover bg-warning">
     <?php
         if($table=="data_kelas"){
-            $kolom=4;
+            $kolom=5;
     ?>
         <thead>
             <th>Nama Kelas</th>
             <th>Kuota</th>
+            <th>Tahun Ajaran</th>
             <th colspan=2>Aksi</th>
         </thead>
         <?php 
@@ -15,6 +16,7 @@
         <tr>
             <td><?php echo $k->grade.'-'.$k->nama_kelas ?></td>
             <td><?php echo $k->kuota ?></td>
+            <td><?php echo $k->tahun_masuk.'/'.$k->tahun_keluar ?></td>
             <td><a href="<?php echo base_url()."data_kelas/edit/".$k->id_kelas ?>">Edit</a></td>
             <td><a href="<?php echo base_url()."CRUD/hapus/data_kelas/id_kelas/".$k->id_kelas ?>">Hapus</a></td>
         </tr>
@@ -44,7 +46,7 @@
             <td><?php echo $s->alamat ?></td>
             <td><a href="<?php echo base_url()."data_siswa/edit/".$s->nis ?>">Edit</a></td>
             <td><a href="<?php echo base_url()."CRUD/hapus/data_siswa/nis/".$s->nis ?>">Hapus</a></td>
-            <td><a href="<?php echo base_url()."Raport/pdf/data_nilai/nis/".$s->nis ?>">PDF</a></td>
+            <td><a href="<?php echo base_url()."pdf/create/data_nilai/nis/".$s->nis ?>">PDF</a></td>
         </tr>
         <?php
             }
@@ -93,6 +95,25 @@
         </tr>
         <?php
             }      
+        }else if($table=="pdf"){
+            $kolom=4;
+    ?>
+        <thead>
+            <th>Nama</th>
+            <th>Isi</th>
+            <th colspan="2">Aksi</th>
+        </thead>
+    <?php
+        foreach($resource as $pdf){
+    ?>
+        <tr>
+        <td><?php echo $pdf->nama ?></td>
+        <td><?php echo $pdf->isi ?></td>
+        <td><a href="<?php echo base_url()."pdf/edit/".$pdf->kode_pdf ?>">Edit</a></td>
+        <td><a href="<?php echo base_url()."CRUD/hapus/pdf/kode_pdf/".$pdf->kode_pdf ?>">Hapus</a></td>
+        </tr>
+    <?php
+        }
         }
         $kol=$kolom/2;
     ?>

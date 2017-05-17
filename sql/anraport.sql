@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2017 at 08:41 AM
+-- Generation Time: May 17, 2017 at 04:43 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.15
 
@@ -76,6 +76,19 @@ CREATE TABLE `mata_pelajaran` (
   `mata_pelajaran` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pdf`
+--
+
+CREATE TABLE `pdf` (
+  `kode_pdf` varchar(100) NOT NULL,
+  `nama` varchar(250) NOT NULL,
+  `type` enum('HEADER','FOOTER') NOT NULL,
+  `isi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -110,6 +123,12 @@ ALTER TABLE `mata_pelajaran`
   ADD PRIMARY KEY (`id_mapel`);
 
 --
+-- Indexes for table `pdf`
+--
+ALTER TABLE `pdf`
+  ADD PRIMARY KEY (`kode_pdf`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -117,17 +136,17 @@ ALTER TABLE `mata_pelajaran`
 -- AUTO_INCREMENT for table `data_kelas`
 --
 ALTER TABLE `data_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `data_nilai`
 --
 ALTER TABLE `data_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --

@@ -8,17 +8,26 @@
                 text-align: center;
                 width: 100%;
             }
+            footer{
+                bottom: 0px;
+                position: absolute;
+              
+            }
         </style>
     </head>
     <body>
         <?php 
-            foreach($resource as $res){
-                echo $res->isi;
+            foreach($header as $head){
+                echo $head->isi;
+            }foreach($siswa as $s){
+        ?>
+        <p>Nama : <?php echo $s->nama_siswa.'('.$s->nis.')' ?></p>
+        <p>Kelas : <?php echo $s->grade.'-'.$s->nama_kelas ?></p>
+        <table>
+        <?php
+            break;
             }
         ?>
-        <p>Nama : <?php echo $nama.'('.$nis.')' ?></p>
-        <p>Kelas : <?php echo $kelas ?></p>
-        <table>
             <tr>
                 <td>No</td>
                 <td>Mata Pelajaran</td>
@@ -35,10 +44,19 @@
                 <td><?php echo $s->jenis_nilai ?></td>
                 <td><?php echo $s->nilai ?></td>
             </tr>
-            <?php 
-                $i++;
-                }
+        <?php
+        $i++;
+        }
             ?>
         </table>
+        
+            <footer>
+            <?php 
+                
+                foreach($footer as $foot){
+                echo $foot->isi;
+            }
+            ?>
+        </footer>
     </body>
 </html>
